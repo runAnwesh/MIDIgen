@@ -39,7 +39,12 @@ def generate_songs(self):
 
             time = 0
 
-            for section_name in song_structure:
+            # augment chord logic with AI:
+            if use_ai_var.get():  # Add a checkbox “Use AI”
+                pm = generate_ai_clip(length_bars=8, temperature=ai_temp_var.get())
+                pm.write(f"{song_name.replace(' ','_').lower()}_ai.mid")
+            else:
+                for section_name in song_structure:
                 section_chords = random.choice(chord_progressions[section_name])
                 for chord_name in section_chords:
                     chord_notes = get_chord_notes(chord_name[0], key, scales[chord_name[1]])
@@ -53,6 +58,7 @@ def generate_songs(self):
                             volume=100
                         )
                     time += 1
+
 
             filename = f"{song_name.replace(' ', '_').lower()}.mid"
             with open(filename, "wb") as output_file:
