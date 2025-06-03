@@ -40,9 +40,11 @@ def generate_songs(self):
             time = 0
 
             # augment chord logic with AI:
-            if use_ai_var.get():  # Add a checkbox “Use AI”
-                pm = generate_ai_clip(length_bars=8, temperature=ai_temp_var.get())
-                pm.write(f"{song_name.replace(' ','_').lower()}_ai.mid")
+            if # 1. text → attributes
+                attrs = text2attribute_model.predict(text_prompt)
+                # 2. attributes → NoteSequence
+                ns = attribute2music_model.generate(attrs)
+                # 3. convert NoteSequence → MIDIFile or pretty_midi and write out
             else:
                 for section_name in song_structure:
                 section_chords = random.choice(chord_progressions[section_name])
