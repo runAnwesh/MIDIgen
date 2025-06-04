@@ -2,10 +2,11 @@
 import pretty_midi
 from magenta.models.music_vae import TrainedModel
 from magenta.models.music_vae.configs import CONFIG_MAP
+import random
 
 
 # choose a pretrained MusicVAE checkpoint:
-config = CONFIG_MAP['cat-mel_2bar_big']    # 2-bar melodies, “cat-mel” interpolation
+config = CONFIG_MAP['cat-mel_2bar_big']    # 2-bar melodies, "cat-mel" interpolation
 music_vae = TrainedModel(
     config, batch_size=4,
     checkpoint_dir_or_path='path/to/cat-mel_2bar_big.tar')
@@ -40,26 +41,26 @@ def generate_songs(self):
             time = 0
 
             # augment chord logic with AI:
-            if # 1. text → attributes
+            if False:  # Placeholder condition - replace with actual condition when text2attribute_model is implemented
                 attrs = text2attribute_model.predict(text_prompt)
                 # 2. attributes → NoteSequence
                 ns = attribute2music_model.generate(attrs)
                 # 3. convert NoteSequence → MIDIFile or pretty_midi and write out
             else:
                 for section_name in song_structure:
-                section_chords = random.choice(chord_progressions[section_name])
-                for chord_name in section_chords:
-                    chord_notes = get_chord_notes(chord_name[0], key, scales[chord_name[1]])
-                    for note in chord_notes:
-                        midi.addNote(
-                            track=0,
-                            channel=0,
-                            pitch=note,
-                            time=time,
-                            duration=1,
-                            volume=100
-                        )
-                    time += 1
+                    section_chords = random.choice(chord_progressions[section_name])
+                    for chord_name in section_chords:
+                        chord_notes = get_chord_notes(chord_name[0], key, scales[chord_name[1]])
+                        for note in chord_notes:
+                            midi.addNote(
+                                track=0,
+                                channel=0,
+                                pitch=note,
+                                time=time,
+                                duration=1,
+                                volume=100
+                            )
+                        time += 1
 
 
             filename = f"{song_name.replace(' ', '_').lower()}.mid"
