@@ -1,0 +1,10 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+magenta==2.1.4
+numpy==1.24.3
+protobuf==3.20.3
+tensorflow==2.13.0
+python-multipart==0.0.6
+python-rtmidi==1.5.8
+numba==0.58.1
+llvmlite==0.41.1 
