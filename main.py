@@ -88,8 +88,8 @@ def generate_instrument_midi(instrument_type: str, output_dir: str = "generated_
 app = FastAPI()
 
 # --- CORS Middleware ---
-# This is crucial for allowing your Next.js app (running on localhost:3000)
-# to communicate with your backend (running on localhost:8000).
+# This is crucial for allowing Next.js app (running on localhost:3000)
+# to communicate with backend (running on localhost:8000).
 origins = [
     "http://localhost",
     "http://localhost:3000",
