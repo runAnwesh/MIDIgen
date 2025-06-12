@@ -3,16 +3,16 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.10
+  - python=3.9
   - pip
   - fastapi
   - uvicorn
   - numpy
   - protobuf
   - python-multipart
+  - numba=0.56.4
+  - llvmlite=0.39.1
   - pip:
-    - tensorflow
-    - magenta
-    - python-rtmidi
-    - numba
-    - llvmlite 
+    - tensorflow==2.9.1
+    - magenta==2.1.4
+    - python-rtmidi==1.1.2 
