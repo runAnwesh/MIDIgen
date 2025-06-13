@@ -12,6 +12,7 @@ dependencies:
   - python-multipart
   - numba=0.56.4
   - llvmlite=0.39.1
+  - cmake
   - pip:
     - tensorflow==2.9.1
     - magenta==2.1.4
