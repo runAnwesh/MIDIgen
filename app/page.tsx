@@ -1,4 +1,3 @@
-// File: app/page.tsx
 'use client';
 
 import { useState } from 'react';
@@ -9,8 +8,7 @@ const VALID_INSTRUMENTS = [
   "kick", "snare", "closed_hat", "open_hat", "clap"
 ];
 
-// The URL of your FastAPI backend.
-// It's good practice to use an environment variable for this.
+// URL
 const API_BASE_URL = "http://127.0.0.1:8000";
 
 export default function HomePage() {
@@ -62,7 +60,7 @@ export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-gray-900 text-white">
       <div className="flex flex-col items-center gap-6 p-10 rounded-lg bg-gray-800 shadow-xl">
-        <h1 className="text-4xl font-bold">AI MIDI Generator</h1>
+        <h1 className="text-4xl font-bold">MidiGEN</h1>
         <p className="text-gray-400">Select an instrument and generate a pattern.</p>
         
         <div className="flex items-center gap-4">
