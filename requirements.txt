@@ -1,10 +1,19 @@
-fastapi==0.104.1
-uvicorn==0.24.0
+# Core Magenta requirements
 magenta==2.1.4
-numpy==1.24.3
+note-seq==0.0.3
+tensorflow==1.15.5
+tensorflow-probability==0.8.0
+
+# Audio/sound requirements
+pyfluidsynth==1.2.5
+librosa==0.8.1
+
+# Web server requirements
+fastapi==0.68.0
+uvicorn==0.15.0
+python-multipart==0.0.5
+
+# Other dependencies
+numpy==1.19.5
 protobuf==3.20.3
-tensorflow==2.13.0
-python-multipart==0.0.6
-python-rtmidi==1.5.8
-numba==0.58.1
-llvmlite==0.41.1 
+google-cloud-storage==1.30.0
