@@ -16,4 +16,3 @@ python-multipart==0.0.5
 # Other dependencies
 numpy==1.19.5
 protobuf==3.20.3
-google-cloud-storage==1.30.0
