@@ -1,12 +1,12 @@
 # Core Magenta requirements
 magenta==2.1.4
 note-seq==0.0.3
-tensorflow==1.15.5
-tensorflow-probability==0.8.0
+tensorflow==2.12.0  # Last version known to work with Magenta 2.1.4
+tensorflow-probability==0.20.1  # Compatible with TF 2.12.0
 
 # Audio/sound requirements
-pyfluidsynth==1.2.5
-librosa==0.8.1
+pyfluidsynth==1.3.2  # Updated version
+librosa==0.10.0  # Updated version
 
 # Web server requirements
 fastapi==0.68.0
@@ -14,5 +14,5 @@ uvicorn==0.15.0
 python-multipart==0.0.5
 
 # Other dependencies
-numpy==1.19.5
+numpy==1.23.5  # Version compatible with TF 2.12.0
 protobuf==3.20.3
